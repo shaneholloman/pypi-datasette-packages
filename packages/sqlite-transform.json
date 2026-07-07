@@ -57,6 +57,9 @@
     "0.1": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "61f8a7718abe0b37f65844b551ba69fb5f4686d1560cd5dc2a4e329b8c1faaf0"
+        },
         "digests": {
           "blake2b_256": "0df3a1d3efbdef0178fb370a6ff5d5251f690ca7e95a34840d1fd315797ec1ac",
           "md5": "984a2f648b210fde7ac1918cc4f8fd7e",
@@ -80,6 +83,9 @@
     "0.2": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "088bf10c9985d32b26c9d2679ed889c1765776a35234f019f1d19bf7f45383b9"
+        },
         "digests": {
           "blake2b_256": "a62e586adb881a208db21e386e7f51c07c4129d4f29a8b26089a44b906466733",
           "md5": "25e85660bbac54f8a767105095932346",
@@ -103,6 +109,9 @@
     "0.3": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "3d97cb8a8115ad2b0d6f4d7a94c009dd30a60342d771d6df092c18622e7a4bc9"
+        },
         "digests": {
           "blake2b_256": "270f983d68bef5e5aa1dd35d5a32e9f139c1f207df0add39f0038cd7132b2326",
           "md5": "e90b19688735903f36ee345082265171",
@@ -126,6 +135,9 @@
     "0.3.1": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "97d18a777ebde546f3760fd92331a0fa688e449ed7933034f3f697ea49dd91e0"
+        },
         "digests": {
           "blake2b_256": "6d36f98fe2415b4d40eb54f446788a27c6d9c398fcedfcd789ee1e3b13bf202a",
           "md5": "1134765e0d9a8a41108b8f7ccdf51ddd",
@@ -147,6 +159,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "8361e9411dda2cc7022c1604a1aa935a4e0079bd0f60b0592f525521165d0921",
           "md5": "dc8530fe0e454aff294d4b92a088f6a7",
@@ -170,6 +183,9 @@
     "0.4": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "624ef254038bb81ac0717b3a2fcf56cdef428e604753e7d6bf4173feb7078867"
+        },
         "digests": {
           "blake2b_256": "ca8c5ec3722a326467ddd503257e7b634659447ef88cd866a3a1c365d9a4839d",
           "md5": "71bf1c54764caed4daa498e2b8fd8d29",
@@ -191,6 +207,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "17b0e2ac9fd0510f70ab9ba7b940b9d95e070ad84598bbd629b79f53cc79bf1c",
           "md5": "c941b5793b1f43308e60fcc61e36e894",
@@ -214,6 +231,9 @@
     "0.5": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "2c537a0dcfa5020023ca407d1f4a0f9dc9a1f5bd21596fbfbd1ac675f5d0fc48"
+        },
         "digests": {
           "blake2b_256": "7572510d3f091db3523ca4b913237114f4e9f53b3a7c71d46f56eb7c2db44d1b",
           "md5": "502287f6558db75d834589be39d9d952",
@@ -235,6 +255,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "8c5812538cc75832b25dffb45bd68bee03cfd8243b4c1f37d2bd5bc8558bfaf2",
           "md5": "39c3f918119c8ec3e5bf0c00021f7ffb",
@@ -258,6 +279,9 @@
     "1.0": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "2346f9406b17d4dfa4ce52052c159cc248ae53451d65959e413d84070db5f5e1"
+        },
         "digests": {
           "blake2b_256": "02867e1f4084c0ecf95ebdbf35a5bd99fafc8945e68b8c07726e5b344d3b625c",
           "md5": "d960998cfcdcf61ff2474d3571909df7",
@@ -279,6 +303,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "ca0c82b8190b80bc144ab776f5028b40ec6b3d86e0b5eedd03d437c4b1406025",
           "md5": "bac226bfe70f4c697346fd7da1053270",
@@ -302,6 +327,9 @@
     "1.1": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "fe109aee8ecd9c8c1306a9942eabf53cbbc4d75979b7b9da4132ffb5debb13d9"
+        },
         "digests": {
           "blake2b_256": "1898500c282a3b6cb60b140419b5f317469d6d8149ccfad62b0ff9dedd2c7684",
           "md5": "04048b614ef79bc5d4f0c567503f3b48",
@@ -323,6 +351,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "d5dc2b8dd18fa3c8468d3c1abb3b0ac162b3bd0cc2f3af91ba6b3cdc92ae3068",
           "md5": "2faca0dc3c7afd7ef9312df051a5e64b",
@@ -346,6 +375,9 @@
     "1.2": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "4ad0777b9105ab7878f489594e01c9b18d66824d5620b3f93667bbd87edb02fb"
+        },
         "digests": {
           "blake2b_256": "7b02e1b4533412e653385b71cf3eafe4092afda6bdf47548406693823ca25dea",
           "md5": "25b45879c72e6b9b34bfc4fb3c25d55c",
@@ -367,6 +399,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "b2916ed4863f956d170c15d4ee7612133c52229cdcea7fbb852c6f6f451ac3f2",
           "md5": "14e87c72899b9e6c52077ddf0fc32a89",
@@ -390,6 +423,9 @@
     "1.2.1": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "1c453b8440e1fe7311b3761357f8552c64002459cc7cb45ae4cd320356a3cf61"
+        },
         "digests": {
           "blake2b_256": "cf8981ce979470ba1bf7ff7f193ac973a2d20b175e39a629e08ffa4cefbc9376",
           "md5": "360216a95da9abb5ccd8a6523146df83",
@@ -411,6 +447,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "46110664dd498ab61160c071f2e7401213c0251bd900525cbc728cffcc3895b2",
           "md5": "b2d1107a09ac4da8d7dc353d7d0ae718",
@@ -435,6 +472,9 @@
   "urls": [
     {
       "comment_text": "",
+      "core-metadata": {
+        "sha256": "1c453b8440e1fe7311b3761357f8552c64002459cc7cb45ae4cd320356a3cf61"
+      },
       "digests": {
         "blake2b_256": "cf8981ce979470ba1bf7ff7f193ac973a2d20b175e39a629e08ffa4cefbc9376",
         "md5": "360216a95da9abb5ccd8a6523146df83",
@@ -456,6 +496,7 @@
     },
     {
       "comment_text": "",
+      "core-metadata": false,
       "digests": {
         "blake2b_256": "46110664dd498ab61160c071f2e7401213c0251bd900525cbc728cffcc3895b2",
         "md5": "b2d1107a09ac4da8d7dc353d7d0ae718",

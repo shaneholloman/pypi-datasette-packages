@@ -56,6 +56,7 @@
     "0.1": [
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "7d9fcd60c32ff442fe18c7fb9f948860d646ebc7e6c1614a90f1e2ab50f390bd",
           "md5": "758503ec9094419a50e44330efd35e3f",
@@ -79,6 +80,7 @@
     "0.2": [
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "407325ddf943e2ab13954057f548a213e588ab9dc443a0be849639ce96f42e69",
           "md5": "73ca236b29052ef4069b6f65946c2cfe",
@@ -102,6 +104,7 @@
     "0.3": [
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "76a7968d92a5c83f8404ad4a4f5965aafc7bacabeb9c96f128c4b051714431bd",
           "md5": "226bba2b07be774b301699d3d7153f24",
@@ -125,6 +128,9 @@
     "0.4": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "94254182fed2b2c08bac8b4fa3881ce37c667b2698e83182d48fb790d100ee6b"
+        },
         "digests": {
           "blake2b_256": "bc056110561593f5beb819f2fb2fb69bd8bfb235cbfa80d05b2484b78594e8e8",
           "md5": "b8bfaa6de93f81b1e1ae149ffa3ae6fe",
@@ -146,6 +152,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "5604b9fb40f14234b40b4de9bd2e606e6ad58f66ac46fc05b78aaab9e6db3c81",
           "md5": "288ea814de0a1fe367c5b8cbeebf79e3",
@@ -170,6 +177,9 @@
   "urls": [
     {
       "comment_text": "",
+      "core-metadata": {
+        "sha256": "94254182fed2b2c08bac8b4fa3881ce37c667b2698e83182d48fb790d100ee6b"
+      },
       "digests": {
         "blake2b_256": "bc056110561593f5beb819f2fb2fb69bd8bfb235cbfa80d05b2484b78594e8e8",
         "md5": "b8bfaa6de93f81b1e1ae149ffa3ae6fe",
@@ -191,6 +201,7 @@
     },
     {
       "comment_text": "",
+      "core-metadata": false,
       "digests": {
         "blake2b_256": "5604b9fb40f14234b40b4de9bd2e606e6ad58f66ac46fc05b78aaab9e6db3c81",
         "md5": "288ea814de0a1fe367c5b8cbeebf79e3",

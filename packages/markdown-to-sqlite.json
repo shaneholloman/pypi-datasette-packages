@@ -68,6 +68,9 @@
     "0.1": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "5a5212df2db0e69c24354778be40150c985693abae6e12194eefaefa40da9878"
+        },
         "digests": {
           "blake2b_256": "7a692a905b7a0cbef5d0b06bd266854c40c04fa2f807d2eb804cb5d26cebe52b",
           "md5": "7539972ecd6d3469e8d82c5fafc3e8c8",
@@ -91,6 +94,9 @@
     "0.2": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "39b60b7d4a0e741a5a72d8a17b58e2c63218cc40e2e237ca3092e42a7cadb5dc"
+        },
         "digests": {
           "blake2b_256": "32e1601634499f46e4c9d67f508595b033b0ae109e65c2bab71762dbb6ca8796",
           "md5": "aeaa5f668c4a00214eb7741abeb721f7",
@@ -112,6 +118,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "cd2ca4ba92f42a7a5ef02935947e469806e79e143d05dde6ba32513f7d104be6",
           "md5": "01034a3ce04cfa80da074680d265ac00",
@@ -135,6 +142,9 @@
     "1.0": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "f4e63f0cb319d42128a6d270dc2415fb06299fd711863329ff3dc4d10ffd75d1"
+        },
         "digests": {
           "blake2b_256": "e9e47396bd17355be69156acb15ef102c5c8b7ac6d99186afb1ea7cda25ba49d",
           "md5": "246c5f829b0510953af1e743dac66d03",
@@ -156,6 +166,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "8e1a99a91dd4b153fa12ab45eacf22177ca58f83f87d6eeaab9cce157ab46fda",
           "md5": "818fdf2165702e7ce00cd3f8a98ac3d6",
@@ -180,6 +191,9 @@
   "urls": [
     {
       "comment_text": "",
+      "core-metadata": {
+        "sha256": "f4e63f0cb319d42128a6d270dc2415fb06299fd711863329ff3dc4d10ffd75d1"
+      },
       "digests": {
         "blake2b_256": "e9e47396bd17355be69156acb15ef102c5c8b7ac6d99186afb1ea7cda25ba49d",
         "md5": "246c5f829b0510953af1e743dac66d03",
@@ -201,6 +215,7 @@
     },
     {
       "comment_text": "",
+      "core-metadata": false,
       "digests": {
         "blake2b_256": "8e1a99a91dd4b153fa12ab45eacf22177ca58f83f87d6eeaab9cce157ab46fda",
         "md5": "818fdf2165702e7ce00cd3f8a98ac3d6",
