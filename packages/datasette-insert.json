@@ -61,6 +61,9 @@
     "0.5": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "cef4ece67bd04cd1091b56c5955116032970733321c6fe3a46927f08330a022e"
+        },
         "digests": {
           "blake2b_256": "b32181435a0ef94a4991c04b37653be3a2b7dedcd29f03bfcdb9156dde116e79",
           "md5": "86ddbcf62e0462112e6cf810d28f8bf4",
@@ -82,6 +85,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "555a32b19fd2be1d971fd1b5cfe70258e3190ef81937fad9280097a1a1120136",
           "md5": "82b1333c62cfb152a8d7d00438d1ff42",
@@ -105,6 +109,9 @@
     "0.6": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "583f46b724986378fc22ae1b4668e10a31b050378bc649d1b0c769f5da072f5f"
+        },
         "digests": {
           "blake2b_256": "b40a184865ec7180aa83450be9053863527a4e7467dc7be8306bd2232d4cdade",
           "md5": "10a5f23536fab4cd1f6d520ecd24913a",
@@ -126,6 +133,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "2b1a6cad3e28704ba5cda9fcf35ec7c7076ec8abf89cfe787e5b8f8edaf64062",
           "md5": "8d1d295457dc57bc1847b4611d99729f",
@@ -149,6 +157,9 @@
     "0.7": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "8a15314ea852d70201479b3c321bd247661ec9cf9655ebf1c64efe383248a166"
+        },
         "digests": {
           "blake2b_256": "07f15b345e06c71bafefd52148ea9f440667d064b1d77ed6a4e946f39a1fade0",
           "md5": "0bdadddcef624f71d135dc130a1feee3",
@@ -170,6 +181,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "40847347f8e4304e4006f56090516cb1ef429d50c209641c5a86a6cf0316aa47",
           "md5": "fff93b5e161abca2b2c7904a434b7379",
@@ -193,6 +205,9 @@
     "0.8": [
       {
         "comment_text": "",
+        "core-metadata": {
+          "sha256": "147ea77f027566884392de2d696cbbf9ddb2de68c5de4e46b30632de10a73d15"
+        },
         "digests": {
           "blake2b_256": "af150253bb3ea69f2e04897e0b02cd96c2ac23cd0be73b61b5a0c41b8f42a633",
           "md5": "be3f31a08a76588f5a2e6b2f6652eae9",
@@ -214,6 +229,7 @@
       },
       {
         "comment_text": "",
+        "core-metadata": false,
         "digests": {
           "blake2b_256": "c31836d812ff3cb298c8a081c1b780b6f39b0995cc25ae06430af86adf0aaeb0",
           "md5": "352d67a581df2a0308b9dd6d5f30affd",
@@ -238,6 +254,9 @@
   "urls": [
     {
       "comment_text": "",
+      "core-metadata": {
+        "sha256": "147ea77f027566884392de2d696cbbf9ddb2de68c5de4e46b30632de10a73d15"
+      },
       "digests": {
         "blake2b_256": "af150253bb3ea69f2e04897e0b02cd96c2ac23cd0be73b61b5a0c41b8f42a633",
         "md5": "be3f31a08a76588f5a2e6b2f6652eae9",
@@ -259,6 +278,7 @@
     },
     {
       "comment_text": "",
+      "core-metadata": false,
       "digests": {
         "blake2b_256": "c31836d812ff3cb298c8a081c1b780b6f39b0995cc25ae06430af86adf0aaeb0",
         "md5": "352d67a581df2a0308b9dd6d5f30affd",
