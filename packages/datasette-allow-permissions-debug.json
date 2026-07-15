@@ -45,7 +45,7 @@
     "yanked": false,
     "yanked_reason": null
   },
-  "last_serial": 32184643,
+  "last_serial": 39003226,
   "ownership": {
     "organization": null,
     "roles": [
@@ -148,6 +148,54 @@
         "upload_time": "2025-11-04T03:16:42",
         "upload_time_iso_8601": "2025-11-04T03:16:42.989761Z",
         "url": "https://files.pythonhosted.org/packages/ef/aa/96c099e48359a762c9912897460e710bd03e83d9af582a725ae42f1b6f20/datasette_allow_permissions_debug-0.2a0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2a1": [
+      {
+        "comment_text": null,
+        "core-metadata": {
+          "sha256": "0fcd9370242623013b215da14b7e4bb69ce5bd164cb9a8d65581ee1f2db23b80"
+        },
+        "digests": {
+          "blake2b_256": "fe64e42fd56c46ddd237ac7eba248afde714c4f555b1e49d796705cfa8300a19",
+          "md5": "7c34f80dabcc35e0bcae0b79a31cc2a2",
+          "sha256": "d074ea30273fdf0fcbcd2045110f87bbbfdbdf2ffbf2f4b1331a2403f4bc0655"
+        },
+        "downloads": -1,
+        "filename": "datasette_allow_permissions_debug-0.2a1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "7c34f80dabcc35e0bcae0b79a31cc2a2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 2363,
+        "upload_time": "2026-07-14T23:16:10",
+        "upload_time_iso_8601": "2026-07-14T23:16:10.808410Z",
+        "url": "https://files.pythonhosted.org/packages/fe/64/e42fd56c46ddd237ac7eba248afde714c4f555b1e49d796705cfa8300a19/datasette_allow_permissions_debug-0.2a1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "core-metadata": false,
+        "digests": {
+          "blake2b_256": "a3eca232a466d3318e6ff354fd6925c9776c655af5141067a08d9ab754518e8c",
+          "md5": "dea2bdfca9dedde7b2a80925dad557bc",
+          "sha256": "e6f8774bf897ff76748edb8d821b0688357016345112d0cf426fb32bcf235a29"
+        },
+        "downloads": -1,
+        "filename": "datasette_allow_permissions_debug-0.2a1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "dea2bdfca9dedde7b2a80925dad557bc",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 1150,
+        "upload_time": "2026-07-14T23:16:11",
+        "upload_time_iso_8601": "2026-07-14T23:16:11.993466Z",
+        "url": "https://files.pythonhosted.org/packages/a3/ec/a232a466d3318e6ff354fd6925c9776c655af5141067a08d9ab754518e8c/datasette_allow_permissions_debug-0.2a1.tar.gz",
         "yanked": false,
         "yanked_reason": null
       }

@@ -1,26 +1,26 @@
 {
   "info": {
     "author": "Simon Willison",
-    "author_email": "",
+    "author_email": null,
     "bugtrack_url": null,
     "classifiers": [],
-    "description": "# datasette-block-robots\n\n[![PyPI](https://img.shields.io/pypi/v/datasette-block-robots.svg)](https://pypi.org/project/datasette-block-robots/)\n[![Changelog](https://img.shields.io/github/v/release/simonw/datasette-block-robots?label=changelog)](https://github.com/simonw/datasette-block-robots/releases)\n[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/simonw/datasette-block-robots/blob/master/LICENSE)\n\nDatasette plugin that blocks robots and crawlers using robots.txt\n\n## Installation\n\nInstall this plugin in the same environment as Datasette.\n\n    $ pip install datasette-block-robots\n\n## Usage\n\nHaving installed the plugin, `/robots.txt` on your Datasette instance will return the following:\n\n    User-agent: *\n    Disallow: /\n\nThis will request all robots and crawlers not to visit any of the pages on your site.\n\nHere's a demo of the plugin in action: https://sqlite-generate-demo.datasette.io/robots.txt\n\n## Configuration\n\nBy default the plugin will block all access to the site, using `Disallow: /`.\n\nIf you want the index page to be indexed by search engines without crawling the database, table or row pages themselves, you can use the following:\n\n```json\n{\n    \"plugins\": {\n        \"datasette-block-robots\": {\n            \"allow_only_index\": true\n        }\n    }\n}\n```\nThis will return a `/robots.txt` like so:\n\n    User-agent: *\n    Disallow: /db1\n    Disallow: /db2\n\nWith a `Disallow` line for every attached database.\n\nTo block access to specific areas of the site using custom paths, add this to your `metadata.json` configuration file:\n\n```json\n{\n    \"plugins\": {\n        \"datasette-block-robots\": {\n            \"disallow\": [\"/mydatabase/mytable\"]\n        }\n    }\n}\n```\nThis will result in a `/robots.txt` that looks like this:\n\n    User-agent: *\n    Disallow: /mydatabase/mytable\n\nAlternatively you can set the full contents of the `robots.txt` file using the `literal` configuration option. Here's how to do that if you are using YAML rather than JSON and have a `metadata.yml` file:\n\n```yaml\nplugins:\n    datasette-block-robots:\n        literal: |-\n            User-agent: *\n            Disallow: /\n            User-agent: Bingbot\n            User-agent: Googlebot\n            Disallow:\n```\nThis example would block all crawlers with the exception of Googlebot and Bingbot, which are allowed to crawl the entire site.\n\n## Extending this with other plugins\n\nThis plugin adds a new [plugin hook](https://docs.datasette.io/en/stable/plugin_hooks.html) to Datasete called `block_robots_extra_lines()` which can be used by other plugins to add their own additional lines to the `robots.txt` file.\n\nThe hook can optionally accept these parameters:\n\n- `datasette`: The current [Datasette instance](https://docs.datasette.io/en/stable/internals.html#datasette-class). You can use this to execute SQL queries or read plugin configuration settings.\n- `request`: The [Request object](https://docs.datasette.io/en/stable/internals.html#request-object) representing the incoming request to `/robots.txt`.\n\nThe hook should return a list of strings, each representing a line to be added to the `robots.txt` file.\n\nIt can also return an `async def` function, which will be awaited and used to generate a list of lines. Use this option if you need to make `await` calls inside you hook implementation.\n\nThis example uses the hook to add a `Sitemap: http://example.com/sitemap.xml` line to the `robots.txt` file:\n\n```python\nfrom datasette import hookimpl\n\n@hookimpl\ndef block_robots_extra_lines(datasette, request):\n    return [\n        \"Sitemap: {}\".format(datasette.absolute_url(request, \"/sitemap.xml\")),\n    ]\n```\nThis example blocks access to paths based on a database query:\n\n```python\n@hookimpl\ndef block_robots_extra_lines(datasette):\n    async def inner():\n        db = datasette.get_database()\n        result = await db.execute(\"select path from mytable\")\n        return [\n            \"Disallow: /{}\".format(row[\"path\"]) for row in result\n        ]\n    return inner\n```\n[datasette-sitemap](https://datasette.io/plugins/datasette-sitemap) is an example of a plugin that uses this hook.\n\n## Development\n\nTo set up this plugin locally, first checkout the code. Then create a new virtual environment:\n\n    cd datasette-block-robots\n    python3 -mvenv venv\n    source venv/bin/activate\n\nOr if you are using `pipenv`:\n\n    pipenv shell\n\nNow install the dependencies and tests:\n\n    pip install -e '.[test]'\n\nTo run the tests:\n\n    pytest\n\n\n",
+    "description": "# datasette-block-robots\n\n[![PyPI](https://img.shields.io/pypi/v/datasette-block-robots.svg)](https://pypi.org/project/datasette-block-robots/)\n[![Changelog](https://img.shields.io/github/v/release/simonw/datasette-block-robots?label=changelog)](https://github.com/simonw/datasette-block-robots/releases)\n[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/simonw/datasette-block-robots/blob/master/LICENSE)\n\nDatasette plugin that blocks robots and crawlers using robots.txt\n\n## Installation\n\nInstall this plugin in the same environment as Datasette.\n\n    $ pip install datasette-block-robots\n\n## Usage\n\nHaving installed the plugin, `/robots.txt` on your Datasette instance will return the following:\n\n    User-agent: *\n    Disallow: /\n\nThis will request all robots and crawlers not to visit any of the pages on your site.\n\nHere's a demo of the plugin in action: https://sqlite-generate-demo.datasette.io/robots.txt\n\n## Configuration\n\nBy default the plugin will block all access to the site, using `Disallow: /`.\n\nIf you want the index page to be indexed by search engines without crawling the database, table or row pages themselves, you can use the following:\n\n```json\n{\n    \"plugins\": {\n        \"datasette-block-robots\": {\n            \"allow_only_index\": true\n        }\n    }\n}\n```\nThis will return a `/robots.txt` like so:\n\n    User-agent: *\n    Disallow: /db1\n    Disallow: /db2\n\nWith a `Disallow` line for every attached database.\n\nTo block access to specific areas of the site using custom paths, add this to your `metadata.json` configuration file:\n\n```json\n{\n    \"plugins\": {\n        \"datasette-block-robots\": {\n            \"disallow\": [\"/mydatabase/mytable\"]\n        }\n    }\n}\n```\nThis will result in a `/robots.txt` that looks like this:\n\n    User-agent: *\n    Disallow: /mydatabase/mytable\n\nAlternatively you can set the full contents of the `robots.txt` file using the `literal` configuration option. Here's how to do that if you are using YAML rather than JSON and have a `metadata.yml` file:\n\n```yaml\nplugins:\n    datasette-block-robots:\n        literal: |-\n            User-agent: *\n            Disallow: /\n            User-agent: Bingbot\n            User-agent: Googlebot\n            Disallow:\n```\nThis example would block all crawlers with the exception of Googlebot and Bingbot, which are allowed to crawl the entire site.\n\n## Extending this with other plugins\n\nThis plugin adds a new [plugin hook](https://docs.datasette.io/en/stable/plugin_hooks.html) to Datasete called `block_robots_extra_lines()` which can be used by other plugins to add their own additional lines to the `robots.txt` file.\n\nThe hook can optionally accept these parameters:\n\n- `datasette`: The current [Datasette instance](https://docs.datasette.io/en/stable/internals.html#datasette-class). You can use this to execute SQL queries or read plugin configuration settings.\n- `request`: The [Request object](https://docs.datasette.io/en/stable/internals.html#request-object) representing the incoming request to `/robots.txt`.\n\nThe hook should return a list of strings, each representing a line to be added to the `robots.txt` file.\n\nIt can also return an `async def` function, which will be awaited and used to generate a list of lines. Use this option if you need to make `await` calls inside you hook implementation.\n\nThis example uses the hook to add a `Sitemap: http://example.com/sitemap.xml` line to the `robots.txt` file:\n\n```python\nfrom datasette import hookimpl\n\n@hookimpl\ndef block_robots_extra_lines(datasette, request):\n    return [\n        \"Sitemap: {}\".format(datasette.absolute_url(request, \"/sitemap.xml\")),\n    ]\n```\nThis example blocks access to paths based on a database query:\n\n```python\n@hookimpl\ndef block_robots_extra_lines(datasette):\n    async def inner():\n        db = datasette.get_database()\n        result = await db.execute(\"select path from mytable\")\n        return [\n            \"Disallow: /{}\".format(row[\"path\"]) for row in result\n        ]\n    return inner\n```\n[datasette-sitemap](https://datasette.io/plugins/datasette-sitemap) is an example of a plugin that uses this hook.\n\n## Development\n\nTo set up this plugin locally, first checkout the code. Then create a new virtual environment:\n\n    cd datasette-block-robots\n    python3 -mvenv venv\n    source venv/bin/activate\n\nOr if you are using `pipenv`:\n\n    pipenv shell\n\nNow install the dependencies and tests:\n\n    pip install -e '.[test]'\n\nTo run the tests:\n\n    pytest\n",
     "description_content_type": "text/markdown",
     "docs_url": null,
-    "download_url": "",
+    "download_url": null,
     "downloads": {
       "last_day": -1,
       "last_month": -1,
       "last_week": -1
     },
     "dynamic": null,
-    "home_page": "https://github.com/simonw/datasette-block-robots",
-    "keywords": "",
-    "license": "Apache License, Version 2.0",
-    "license_expression": null,
+    "home_page": null,
+    "keywords": null,
+    "license": null,
+    "license_expression": "Apache-2.0",
     "license_files": null,
-    "maintainer": "",
-    "maintainer_email": "",
+    "maintainer": null,
+    "maintainer_email": null,
     "name": "datasette-block-robots",
     "package_url": "https://pypi.org/project/datasette-block-robots/",
     "platform": null,
@@ -32,20 +32,17 @@
       "Issues": "https://github.com/simonw/datasette-block-robots/issues"
     },
     "provides_extra": null,
-    "release_url": "https://pypi.org/project/datasette-block-robots/1.1/",
+    "release_url": "https://pypi.org/project/datasette-block-robots/1.1.1/",
     "requires_dist": [
-      "datasette (>=0.50)",
-      "pytest ; extra == 'test'",
-      "pytest-asyncio ; extra == 'test'",
-      "httpx ; extra == 'test'"
+      "datasette>=0.50"
     ],
-    "requires_python": "",
+    "requires_python": ">=3.10",
     "summary": "Datasette plugin that blocks all robots using robots.txt",
-    "version": "1.1",
+    "version": "1.1.1",
     "yanked": false,
     "yanked_reason": null
   },
-  "last_serial": 14937534,
+  "last_serial": 39004123,
   "ownership": {
     "organization": null,
     "roles": [
@@ -343,52 +340,100 @@
         "yanked": false,
         "yanked_reason": null
       }
+    ],
+    "1.1.1": [
+      {
+        "comment_text": null,
+        "core-metadata": {
+          "sha256": "08b71f19272d4a54988223eb2bb7a7801397d65f54aaf4d747e6f9ffa4f75054"
+        },
+        "digests": {
+          "blake2b_256": "f28ef2b519b5c8e855f2c948716693ead4ff0e799e0bf7ebd42710ceb41bc08e",
+          "md5": "10ed7616b32f64c114e53a742f9a9167",
+          "sha256": "6da61bf349ec6f192b5895b20ec663fa544ac072f05d59595a5e0a694df709e6"
+        },
+        "downloads": -1,
+        "filename": "datasette_block_robots-1.1.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "10ed7616b32f64c114e53a742f9a9167",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 4086,
+        "upload_time": "2026-07-14T23:56:59",
+        "upload_time_iso_8601": "2026-07-14T23:56:59.507223Z",
+        "url": "https://files.pythonhosted.org/packages/f2/8e/f2b519b5c8e855f2c948716693ead4ff0e799e0bf7ebd42710ceb41bc08e/datasette_block_robots-1.1.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "core-metadata": false,
+        "digests": {
+          "blake2b_256": "830a7fbdeede85c26f62895fce25d5d6c61880a3cefd1ffc676f184a23441cbc",
+          "md5": "aa134d46416d95c4453ca4be10c37e46",
+          "sha256": "1c7726249968574f9b8951f17c8563470d4a0f60dab33f42aa6e125a4141172a"
+        },
+        "downloads": -1,
+        "filename": "datasette_block_robots-1.1.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "aa134d46416d95c4453ca4be10c37e46",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 4292,
+        "upload_time": "2026-07-14T23:57:00",
+        "upload_time_iso_8601": "2026-07-14T23:57:00.686938Z",
+        "url": "https://files.pythonhosted.org/packages/83/0a/7fbdeede85c26f62895fce25d5d6c61880a3cefd1ffc676f184a23441cbc/datasette_block_robots-1.1.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
     ]
   },
   "urls": [
     {
-      "comment_text": "",
+      "comment_text": null,
       "core-metadata": {
-        "sha256": "972ad48dde5fdcdcbb371d7d8c5ce6c6838d0d27831f1a1bb5d48ec188dd3618"
+        "sha256": "08b71f19272d4a54988223eb2bb7a7801397d65f54aaf4d747e6f9ffa4f75054"
       },
       "digests": {
-        "blake2b_256": "7d99189fc74fc96a2c223fbc384962df0d68ca8b260457bf23e63402b82eb8aa",
-        "md5": "b7255c9a09ba4b04bc70701c8e131a85",
-        "sha256": "ea1e4046fd1aab1db13db09ea89dba95714aabf034f464cff92f2b6f0a123ef8"
+        "blake2b_256": "f28ef2b519b5c8e855f2c948716693ead4ff0e799e0bf7ebd42710ceb41bc08e",
+        "md5": "10ed7616b32f64c114e53a742f9a9167",
+        "sha256": "6da61bf349ec6f192b5895b20ec663fa544ac072f05d59595a5e0a694df709e6"
       },
       "downloads": -1,
-      "filename": "datasette_block_robots-1.1-py3-none-any.whl",
+      "filename": "datasette_block_robots-1.1.1-py3-none-any.whl",
       "has_sig": false,
-      "md5_digest": "b7255c9a09ba4b04bc70701c8e131a85",
+      "md5_digest": "10ed7616b32f64c114e53a742f9a9167",
       "packagetype": "bdist_wheel",
       "python_version": "py3",
-      "requires_python": null,
-      "size": 4375,
-      "upload_time": "2022-08-30T16:26:46",
-      "upload_time_iso_8601": "2022-08-30T16:26:46.049703Z",
-      "url": "https://files.pythonhosted.org/packages/7d/99/189fc74fc96a2c223fbc384962df0d68ca8b260457bf23e63402b82eb8aa/datasette_block_robots-1.1-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "size": 4086,
+      "upload_time": "2026-07-14T23:56:59",
+      "upload_time_iso_8601": "2026-07-14T23:56:59.507223Z",
+      "url": "https://files.pythonhosted.org/packages/f2/8e/f2b519b5c8e855f2c948716693ead4ff0e799e0bf7ebd42710ceb41bc08e/datasette_block_robots-1.1.1-py3-none-any.whl",
       "yanked": false,
       "yanked_reason": null
     },
     {
-      "comment_text": "",
+      "comment_text": null,
       "core-metadata": false,
       "digests": {
-        "blake2b_256": "009b983c94277d304381ee875500e8146e3d3c1456e01cd584c81e3bbcccf1c7",
-        "md5": "02d9fef22e47b885b0ec2082ca450a2d",
-        "sha256": "e679fc43c5694194a6e393902bc9e06d611563f4947a8ad7ac3127877f0a9f74"
+        "blake2b_256": "830a7fbdeede85c26f62895fce25d5d6c61880a3cefd1ffc676f184a23441cbc",
+        "md5": "aa134d46416d95c4453ca4be10c37e46",
+        "sha256": "1c7726249968574f9b8951f17c8563470d4a0f60dab33f42aa6e125a4141172a"
       },
       "downloads": -1,
-      "filename": "datasette-block-robots-1.1.tar.gz",
+      "filename": "datasette_block_robots-1.1.1.tar.gz",
       "has_sig": false,
-      "md5_digest": "02d9fef22e47b885b0ec2082ca450a2d",
+      "md5_digest": "aa134d46416d95c4453ca4be10c37e46",
       "packagetype": "sdist",
       "python_version": "source",
-      "requires_python": null,
-      "size": 4122,
-      "upload_time": "2022-08-30T16:26:48",
-      "upload_time_iso_8601": "2022-08-30T16:26:48.152893Z",
-      "url": "https://files.pythonhosted.org/packages/00/9b/983c94277d304381ee875500e8146e3d3c1456e01cd584c81e3bbcccf1c7/datasette-block-robots-1.1.tar.gz",
+      "requires_python": ">=3.10",
+      "size": 4292,
+      "upload_time": "2026-07-14T23:57:00",
+      "upload_time_iso_8601": "2026-07-14T23:57:00.686938Z",
+      "url": "https://files.pythonhosted.org/packages/83/0a/7fbdeede85c26f62895fce25d5d6c61880a3cefd1ffc676f184a23441cbc/datasette_block_robots-1.1.1.tar.gz",
       "yanked": false,
       "yanked_reason": null
     }
